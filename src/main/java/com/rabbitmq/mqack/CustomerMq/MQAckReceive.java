@@ -3,6 +3,7 @@ package com.rabbitmq.mqack.CustomerMq;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.mqack.config.MQConfig;
 import org.springframework.amqp.core.Message;
+import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +33,6 @@ public class MQAckReceive {
         }
 
     }
-
     @RabbitListener(queues = MQConfig.ACK_QUEUE_B)
     public void process2(String msg, Channel channel, Message message) throws IOException {
 
