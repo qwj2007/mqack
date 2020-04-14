@@ -33,6 +33,7 @@ public class MQAckReceive {
         }
 
     }
+
     @RabbitListener(queues = MQConfig.ACK_QUEUE_B)
     public void process2(String msg, Channel channel, Message message) throws IOException {
 
